@@ -1,7 +1,7 @@
 def antoine( a, T ):
     # More text in the comments
     # Ps = antoine( a, T )
-    #
+    # Calculated pressure using antoine coefficients, primarily in mm Hg and Celsius for pressure and temperature. 
     # Uses Antoine's equation to obtain the vapor pressure of a substance given
     # the coefficients of the equation:
     #  Ps = a1 - a2/(a3+T)
@@ -18,8 +18,10 @@ def antoine( a, T ):
     # The units depend on the units used for the coefficients. The user is
     # responsible for maintaining consistency with units. NIST uses bar and K.
     #
+    #Calculated pressure using antoine coefficients, primarily in mm Hg and Celsius for pressure and temperature. 
+    #Pvap=10^(A-(B/(T+C))
     # Code originally by: James C. Sutherland
     # Modified by: Tyler R. Josephson
-
+    
     Ps = 10.0**( a[:,0] - a[:,1] / ( a[:,2] + T ) )
     return Ps
